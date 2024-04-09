@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07fc4825-deff-472d-a8b5-55ecd407697b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/COMP424_Project1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/build.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/AskWillie.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Documents.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/PageRank.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/PageSearch.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/SortNorm.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/SortNorm.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/SortNorm.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +16,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="80" />
+    <option name="totalTimeSeconds" value="1559" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -39,6 +25,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -54,9 +43,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\BEERSSA20\OneDrive - Grove City College\Documents\Junior-Spring\COMP424\COMP424_Project1\src\main\scala" />
+      <recent name="C:\Users\BEERSSA20\OneDrive - Grove City College\Documents\Junior-Spring\COMP424\COMP424_Project1\src\main" />
+    </key>
+  </component>
   <component name="ScalaProjectSettings">
     <option name="scala3DisclaimerShown" value="true" />
   </component>
@@ -68,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712700212340</updated>
-      <workItem from="1712700213786" duration="306000" />
+      <workItem from="1712700213786" duration="1953000" />
     </task>
     <servers />
   </component>
