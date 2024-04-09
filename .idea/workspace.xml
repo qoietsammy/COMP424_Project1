@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07fc4825-deff-472d-a8b5-55ecd407697b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/scala/SortNorm.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/SortNorm.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/PageSearch.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/PageSearch.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +17,7 @@
     <option name="done" value="true" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="1559" />
+    <option name="totalTimeSeconds" value="2029" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -67,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712700212340</updated>
-      <workItem from="1712700213786" duration="1953000" />
+      <workItem from="1712700213786" duration="2557000" />
     </task>
     <servers />
   </component>
