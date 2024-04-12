@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07fc4825-deff-472d-a8b5-55ecd407697b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_modules_scala_parallel_collections_3_1_0_4_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_modules_scala_parallel_collections_3_1_0_4_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala3_library_3_3_3_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala3_library_3_3_3_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_13_10_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_13_10_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/COMP424_Project1-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/COMP424_Project1-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/COMP424_Project1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/COMP424_Project1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/PageSearch.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/PageSearch.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/AskWillie.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/AskWillie.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/PageRank.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/PageRank.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +41,9 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2esjWXiE6nmSeqAI9G3NiXWdOPt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,6 +55,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,8 +70,29 @@
       <recent name="C:\Users\BEERSSA20\OneDrive - Grove City College\Documents\Junior-Spring\COMP424\COMP424_Project1\src\main" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <module name="COMP424_Project1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="ScalaProjectSettings">
     <option name="scala3DisclaimerShown" value="true" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

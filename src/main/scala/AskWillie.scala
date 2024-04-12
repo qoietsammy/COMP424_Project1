@@ -1,3 +1,4 @@
+
 import scala.io.Source
 import scala.io.StdIn.readLine
 import scala.util.Sorting
@@ -16,8 +17,9 @@ import scala.util.Sorting
         val pages: Map[String, WebPage] = mapWebPages(loadWebPages()) // completed for you
 
         // TODO: Measure the importance of each page using one of the functions in PageRank
-        val rankedPages: List[RankedWebPage] = List() // call PageRank.???? here
-
+        val rankedPages: List[RankedWebPage] = PageRank.equal(pages).map({
+          case (id: String, weight: Double) =>
+            RankedWebPage(pages(id), weight)}).toList
         // Get user input then perform search until ":quit" is entered
         var query: String = ""
         var terms: List[String] = List()
@@ -30,12 +32,18 @@ import scala.util.Sorting
             terms != List(":quit")
         } do {
           // TODO: Measure the textual match of each page to these terms using one of the functions in PageSearch
-          val searchedPages: List[SearchedWebPage] = List() // call PageSearch.???? here
+          val searchedPages: List[SearchedWebPage] ={
+            val counts: List[Double] = PageSearch.count(rankedPages, terms)
+            (rankedPages zip counts).map { case (page, matchCount) =>
+              new SearchedWebPage(page, matchCount)
+            }
+          }
           // normalize the ranges for weight and textmatch on these pages
           val pageArray = SearchedWebPageNormalize.normalize(searchedPages).toArray
           // sort this array based on the chosen averaging scheme i.e.
           //    (ArithmeticOrdering || GeometricOrdering || HarmonicOrdering)
-          Sorting.quickSort(pageArray)(NameOrdering) // TODO: change this from name ordering to something else!!!
+          // TODO: change this from name ordering to something else!!!
+          Sorting.quickSort(pageArray)(ArithmeticOrdering)
           // Print the top ranked pages in descending order
           for p <- pageArray.reverse.slice(0, 10) do println(f"${p.name}%-15s  ${p.url}")
           // print a divider to make reading the results easier
