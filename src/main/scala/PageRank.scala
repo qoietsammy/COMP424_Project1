@@ -1,5 +1,6 @@
 import scala.util.Random
-import scala.collection.parallel.CollectionConverters._
+import scala.collection.parallel.CollectionConverters.*
+import scala.language.postfixOps
 
 object PageRank {
     /**
@@ -24,6 +25,36 @@ object PageRank {
     }
 
     def pagerank(pages: Map[String, WebPage]): Map[String, Double] = {
-        Map() // TODO: remove this stub and implement this method
+        val numUsers = 10000
+        val numSteps = 100
+        val damp = 0.85
+
+        def simulateSteps(currentPage: String, stepsLeft: Int, acc: Map[String, Double]): Map[String, Double] = {
+            if (stepsLeft == 0)
+                acc
+            else if (Random.nextDouble() < damp) {
+                val nextPage = pages(currentPage).links(Random.nextInt(pages(currentPage).links.size))
+                simulateSteps(nextPage, stepsLeft - 1, acc.updated(nextPage, acc.getOrElse(nextPage, 0.0) + 1.0))
+            } else {
+                val nextPage = pages.keys.toList(Random.nextInt(pages.size))
+                simulateSteps(nextPage, stepsLeft - 1, acc.updated(nextPage, acc.getOrElse(nextPage, 0.0) + 1.0))
+            }
+        }
+
+        def simulateUser(numUsers: Int, acc: Map[String, Double]): Map[String, Double] = {
+            if (numUsers == 0)
+                acc
+            else
+                val startPage = pages.keys.toList(Random.nextInt(pages.size))
+                val userCounts = simulateSteps(startPage, numSteps, acc)
+                simulateUser(numUsers - 1, userCounts)
+        }
+
+        val defaultMap = pages.keys.toList.map(key => (key, 0.0)).toMap
+
+        val pageCounts = simulateUser(numUsers, defaultMap)
+        pageCounts.map { case (key, count) =>
+            key -> ((count + 1) / (numUsers.toDouble + pages.size))
+        }
     }
 }
