@@ -9,8 +9,7 @@ object PageRank {
      * @return      A map of page.id to a weight of 1.0 for those same WebPage objects
      */
     def equal(pages: Map[String, WebPage]): Map[String, Double] = {
-        pages.map({case(_1,_) => _1 -> 1.0})
-
+        pages.par.map({case(_1,_) => _1 -> 1.0}).seq
     }
 
     /**
@@ -18,11 +17,11 @@ object PageRank {
      * @return A map of page.id to a weight that is a simple count of the number of pages linking to that page
      */
     def indegree(pages: Map[String, WebPage]): Map[String, Double] = {
-        pages.map({case(id: String, page:WebPage) =>
+        pages.par.map({case(id: String, page:WebPage) =>
           id -> pages.values.foldLeft(0)((counter : Int, web : WebPage) =>
             if web.links.contains(id) then counter + 1 else counter
           ).toDouble
-        })
+        }).seq
     }
 
     def pagerank(pages: Map[String, WebPage]): Map[String, Double] = {
@@ -59,9 +58,9 @@ object PageRank {
 
         val defaultMap = pages.keys.toList.map(key => (key, 0.0)).toMap
 
-        val pageCounts = simulateUser(numUsers, defaultMap)
+        val pageCounts = simulateUser(numUsers, defaultMap).par
         pageCounts.map { case (key, count) =>
             key -> ((count + 1) / (numUsers.toDouble + pages.size))
-        }
+        }.seq
     }
 }
