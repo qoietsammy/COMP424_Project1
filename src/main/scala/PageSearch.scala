@@ -20,7 +20,7 @@ object PageSearch {
         }
 
         // creates a list of each total count
-        pages.map(countPage(_))
+        pages.par.map(countPage(_)).toList
     }
 
     /**
@@ -29,7 +29,7 @@ object PageSearch {
      * @return      a list of the term-frequency of the occurrences of those terms in each page in the same order given
      */
     def tf(pages: List[RankedWebPage], query: List[String]): List[Double] = {
-        val findTotals :List[Double] = pages.map {(page : RankedWebPage) => page.text.split(" ").length.toDouble }
+        val findTotals :List[Double] = pages.par.map {(page : RankedWebPage) => page.text.split(" ").length.toDouble }.toList
         val findFreq : List[Double] = count(pages,query)
         val tfFound : List[Double] = (findFreq zip findTotals).map{case (freq, total) => freq/total}
         tfFound
@@ -43,7 +43,7 @@ object PageSearch {
     def tfidf(pages: List[RankedWebPage], query: List[String]): List[Double] = {
         val findFreq = tf(pages, query)
         val idfs = query.map { term =>
-          val appearsIn = pages.count(_.text.contains(term)).toDouble
+          val appearsIn = pages.par.count(_.text.contains(term)).toDouble
           Math.log(pages.length.toDouble / (appearsIn + 1))
         }
         (findFreq zip idfs).map { case (tf, idf) =>
