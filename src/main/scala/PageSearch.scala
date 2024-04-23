@@ -42,12 +42,11 @@ object PageSearch {
      */
     def tfidf(pages: List[RankedWebPage], query: List[String]): List[Double] = {
         val findFreq = tf(pages, query)
-        val idfs = query.map { term =>
-          val appearsIn = pages.par.count(_.text.contains(term)).toDouble
-          Math.log(pages.length.toDouble / (appearsIn + 1))
+        val idfs = query.map { case term =>
+          Math.log(pages.length.toDouble / (pages.count(_.text.contains(term)).toDouble + 1))
         }
-        (findFreq zip idfs).map { case (tf, idf) =>
-            tf * idf
-        }
+        val totalIdf = idfs.foldLeft(1.0)(_ * _)
+
+        findFreq.map(tf => tf * totalIdf)
     }
 }

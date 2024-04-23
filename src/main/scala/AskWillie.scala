@@ -38,7 +38,7 @@ import scala.util.Sorting
 //              new SearchedWebPage(page, matchCount)
 //            }
 
-            val tfs : List[Double] = PageSearch.tf(rankedPages,terms)
+            val tfs : List[Double] = PageSearch.tfidf(rankedPages,terms)
             (rankedPages zip tfs).map { case (page,tfsFound) =>
               new SearchedWebPage(page,tfsFound)
             }
