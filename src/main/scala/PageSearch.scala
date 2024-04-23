@@ -41,6 +41,13 @@ object PageSearch {
      * @return      a list of the TF-IDF score for each page in the same order given
      */
     def tfidf(pages: List[RankedWebPage], query: List[String]): List[Double] = {
-        List() // TODO: implement this method and remove this stub
+        val findFreq = tf(pages, query)
+        val idfs = query.map { term =>
+          val appearsIn = pages.count(_.text.contains(term)).toDouble
+          Math.log(pages.length.toDouble / (appearsIn + 1))
+        }
+        (findFreq zip idfs).map { case (tf, idf) =>
+            tf * idf
+        }
     }
 }
