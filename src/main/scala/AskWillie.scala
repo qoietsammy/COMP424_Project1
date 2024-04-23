@@ -33,9 +33,14 @@ import scala.util.Sorting
         } do {
           // TODO: Measure the textual match of each page to these terms using one of the functions in PageSearch
           val searchedPages: List[SearchedWebPage] ={
-            val counts: List[Double] = PageSearch.count(rankedPages, terms)
-            (rankedPages zip counts).map { case (page, matchCount) =>
-              new SearchedWebPage(page, matchCount)
+//            val counts: List[Double] = PageSearch.count(rankedPages, terms)
+//            (rankedPages zip counts).map { case (page, matchCount) =>
+//              new SearchedWebPage(page, matchCount)
+//            }
+
+            val tfs : List[Double] = PageSearch.tf(rankedPages,terms)
+            (rankedPages zip tfs).map { case (page,tfsFound) =>
+              new SearchedWebPage(page,tfsFound)
             }
           }
           // normalize the ranges for weight and textmatch on these pages
