@@ -1,3 +1,4 @@
+import scala.annotation.tailrec
 import scala.util.Random
 import scala.collection.parallel.CollectionConverters.*
 import scala.language.postfixOps
@@ -29,6 +30,7 @@ object PageRank {
         val numSteps = 100
         val damp = 0.85
 
+        @tailrec
         def simulateSteps(currentPage: String, stepsLeft: Int, acc: Map[String, Double]): Map[String, Double] = {
             if (stepsLeft == 0)
                 acc
@@ -40,7 +42,7 @@ object PageRank {
                 simulateSteps(nextPage, stepsLeft - 1, acc.updated(nextPage, acc.getOrElse(nextPage, 0.0) + 1.0))
             }
         }
-
+        @tailrec
         def simulateUser(numUsers: Int, acc: Map[String, Double]): Map[String, Double] = {
             if (numUsers == 0)
                 acc
