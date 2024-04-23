@@ -35,8 +35,13 @@ object PageRank {
             if (stepsLeft == 0)
                 acc
             else if (Random.nextDouble() < damp) {
-                val nextPage = pages(currentPage).links(Random.nextInt(pages(currentPage).links.size))
-                simulateSteps(nextPage, stepsLeft - 1, acc.updated(nextPage, acc.getOrElse(nextPage, 0.0) + 1.0))
+                if (pages(currentPage).links.size > 0) then {
+                  val nextIndex = Random.nextInt(pages(currentPage).links.size)
+                  val nextPage = pages(currentPage).links(nextIndex)
+                  simulateSteps(nextPage, stepsLeft - 1, acc.updated(nextPage, acc.getOrElse(nextPage, 0.0) + 1.0))
+                } else {
+                  simulateSteps(currentPage, stepsLeft - 1, acc.updated(currentPage, acc.getOrElse(currentPage, 0.0) + 1.0))
+                }
             } else {
                 val nextPage = pages.keys.toList(Random.nextInt(pages.size))
                 simulateSteps(nextPage, stepsLeft - 1, acc.updated(nextPage, acc.getOrElse(nextPage, 0.0) + 1.0))
